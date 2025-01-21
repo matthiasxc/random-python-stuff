@@ -56,9 +56,7 @@ def ocr_images(folder_path, output_file_suffix="_text.txt"):
                 # print(f"Save the preprocessed image temporarily")
                 cv2.imwrite(processed_path, thresh)
 
-                print(f"opening image")
                 image = Image.open(processed_path)
-                print(f"image to string")
                 text = pytesseract.image_to_string(image)
                 if not text:
                     print(f"Text could not be extracte from {filename}")
