@@ -61,9 +61,9 @@ def ocr_images(folder_path, output_file_suffix="_text.txt"):
                 if not text:
                     print(f"Text could not be extracte from {filename}")
                 else:
-                    print(f"got text, creating file")                
+                    # print(f"got text, creating file")                
                     output_file_name = os.path.splitext(os.path.basename(file_path))[0] + output_file_suffix
-                    print(f"opening file {output_file_name}") 
+                    # print(f"opening file {output_file_name}") 
                     with open(output_file_name, 'w', encoding='utf-8') as f:
                         f.write(f"---- Text from {filename} ----\n")
                         f.write(text + "\n\n")
@@ -73,5 +73,5 @@ def ocr_images(folder_path, output_file_suffix="_text.txt"):
 
 if __name__ == "__main__":
     base_dir = os.path.dirname(__file__)  # Directory of the current script
-    folder_path = os.path.join(base_dir, "source", "test-output")
+    folder_path = os.path.join(base_dir, "source", "jpegs")
     ocr_images(folder_path)
